@@ -1,0 +1,46 @@
+=====================================================================================
+"On my honour, I have neither given nor recieved unauthorized aid on this assignment"
+=====================================================================================
+
+Name: Prashanth Prakash
+UFID: 9959-8889
+email: pprakash@cise.ufl.edu
+
+=================================================
+COMPILING
+=================================================
+1. Go to the src directory
+2. Execute
+   make MIPSsim
+
+=================================================
+EXECUTING
+=================================================
+MIPSsim <input file> <output file>
+================================================
+Need some source level changes for the below format
+1. MIPSsim -I <input_file> -D <disassembler_output> -S <simulator_output>
+
+=================================================
+TESTING/psuedoASSEMBLER - input file generation
+=================================================
+This folder contains """testgen.sh""" a script that can be used to generate input files by writing assembly code.
+Write assembly code(modified syntax), as shown in .c files in this folder.
+
+cd test_assembler
+./testgen.sh sw_lw.c
+
+The above command will generate ""sw_lw.c.out"", which is the required Input for MIPSsim file
+
+Make sure your shell is BASH.... haven't tested this on other shells
+
+
+=================================================
+About the Source Files
+=================================================
+1. main.cc		-> uses rest of the classes and disassembles MIPS assembly strings and generates simulated o/p.
+2. memory.cc 	    	-> provides the base class which is used to emulate Register File and Ramdom Access Memory
+3. instructions.cc 	-> provides API's for disassembly, decoding, execution and memory access
+4. utility.cc		-> provides basic utility function for command line parsing, string to int conversion etc..
+5. instr_defs.h		-> provides instruction definations and register definations
+6. other headers	-> provides function prototypes, nothing important

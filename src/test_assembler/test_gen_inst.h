@@ -1,0 +1,30 @@
+#define J(Imm) 000010##Imm
+#define JR(Rs) 000000##Rs##0000000000##00000##001000
+#define BEQ(Rs,Rt,Offset) 000100##Rs##Rt##Offset
+#define BNE(Rs,Rt,Offset) 000101##Rs##Rt##Offset
+#define BLTZ(Rs,Offset) 000001##Rs##00000##Offset
+#define BGTZ(Rs,Offset) 000111##Rs##00000##Offset
+#define BLEZ(Rs,Offset) 000110##Rs##00000##Offset
+#define BGEZ(Rs,Offset) 000001##Rs##00001##Offset
+#define BREAK() 000000##00000000000000000000##001101
+#define SW(Rt,Offset,Base) 001011##Base##Rt##Offset
+#define LW(Rt,Offset,Base) 000011##Base##Rt##Offset
+#define SLL(Rd,Rt,Sa) 000000##00000##Rt##Rd##Sa##000000
+#define SRL(Rd,Rt,Sa) 000000##00000##Rt##Rd##Sa##000010
+#define SRA(Rd,Rt,Sa) 000000##00000##Rt##Rd##Sa##000011
+#define NOP() 00000000000000000000000000000000
+
+#define ADD(Rd,Rs,Rt) 100011##Rs##Rt##Rd##00000000000
+#define SUB(Rd,Rs,Rt) 100010##Rs##Rt##Rd##00000000000
+#define MUL(Rd,Rs,Rt) 100110##Rs##Rt##Rd##00000000000
+#define AND(Rd,Rs,Rt) 101001##Rs##Rt##Rd##00000000000
+#define OR(Rd,Rs,Rt)  101101##Rs##Rt##Rd##00000000000
+#define XOR(Rd,Rs,Rt) 101010##Rs##Rt##Rd##00000000000
+#define NOR(Rd,Rs,Rt) 100001##Rs##Rt##Rd##00000000000
+#define SLT(Rd,Rs,Rt) 101011##Rs##Rt##Rd##00000000000
+
+#define ADDI(Rt,Rs,Imm) 110000##Rs##Rt##Imm
+#define ANDI(Rt,Rs,Imm) 110010##Rs##Rt##Imm
+#define ORI(Rt,Rs,Imm)  110011##Rs##Rt##Imm
+#define XORI(Rt,Rs,Imm) 110101##Rs##Rt##Imm
+#define MOVZ(Rt,Rs,Imm) 110110##Rs##Rt##Imm
