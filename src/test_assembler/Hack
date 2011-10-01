@@ -1,0 +1,5 @@
+This is basic Hack, which is used to generate input files (for testing) as per the specification given for assignment.
+
+gcc preprocesing capability of C is exploited, to achieve this.
+
+So .c files are not really c files but a bunch of macros
